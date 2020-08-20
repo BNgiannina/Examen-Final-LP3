@@ -1,0 +1,24 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{titulo}}
+{% endblock%}
+
+{% block content %}
+    <h1 class="title">{{titulo}}</h1>
+    <ul>
+        {% for curso in cursos %}
+            <li>
+                <h4>{{curso.id}} - {{curso.nombre}}</h4>
+                <p>Codigo: {{curso.codigo}}</P>
+                <P>Horas: {{curso.horas}}</P>
+                <P>Creditos: {{curso.creditos}}</P>
+                <P>Estado: {{curso.estado}}</P>
+                <p>
+                <a href="{% url 'eliminar_curso' id=curso.id %}">Eliminar</a>
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

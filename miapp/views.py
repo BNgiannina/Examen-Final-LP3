@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse, redirect
+from miapp.models import Curso
+from django.db.models import Q
 
 # Create your views here.
 layout = """
@@ -31,3 +33,17 @@ def consultas(request):
    return render(request,'consultas.html',{
        'titulo':'consultas'
     })
+
+
+def listar_cursos(request):
+
+    cursos = Curso.objects.all()    
+    return render(request,'listar_cursos.html',{
+        'cursos': cursos,
+        'titulo': 'Lista de Cursos'
+    })
+
+def eliminar_curso(request, id):
+    curso = Curso.objects.get(pk=id)
+    curso.delete()
+    return redirect('listar_cursos')
