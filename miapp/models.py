@@ -8,3 +8,10 @@ class Curso(models.Model):
     horas=models.TimeField(auto_now_add=True)
     creditos=models.IntegerField()
     estado=models.TextField()
+
+class Carrera(models.Model):
+    nombre=models.CharField(max_length=150)
+    nombrecorto=models.CharField(max_length=150)
+    fecha_fundacion=models.DateField()
+    estado=models.TextField()
+
