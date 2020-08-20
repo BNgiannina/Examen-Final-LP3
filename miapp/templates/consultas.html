@@ -4,7 +4,16 @@
     {{titulo}}
 {% endblock%}
 {% block content %}
-   <h1>
+   <h1> Consultas</h1>
    
-  </h1>
+     <form method="get">
+       <p>Nombre: <input type="text" name="nombre" size="40"> </p><br>
+       <p>Carrera: <input type="text" name="carrera" size="40"> </p><br>
+       <p>Sexo: <input type="radio" name="sexo" value="masculino" size="40">Masculino
+                <input type="radio" name="sexo" value="femenino" size="40">Femenino 
+       </p><br>
+       <p>Consulta: <input type="text" name="consulta" size="40"> </p><br>
+       <p><input type="submit" value="Enviar"></p><br>
+     </form>
+
 {% endblock %}
