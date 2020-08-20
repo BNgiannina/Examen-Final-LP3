@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{titulo}}
+{% endblock%}
+
+{% block content %}
+    <h1 class="title">{{titulo}}</h1>
+    <ul>
+        {% for estudiantes in estudiantes %}
+            <li>
+                <h4>{{estudiantes.id}} - {{estudiantes.nombre}}</h4>
+                <p>Nombre: {{estudiantes.nombre}}</P>
+                <P>Apellido: {{estudiantes.apellido}}</P>
+                <P>DNI: {{estudiantes.dni}}</P>
+                <P>Dirección: {{estudiantes.direccion}}</P>
+                <P>fecha de nacimiento: {{estudiantes.fecha_nacimiento}}</P>
+                
+                <p>
+                <a href="{% url 'eliminar_estudiantes' id=estudiantes.id %}">Eliminar</a>
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from miapp.models import Curso, Carrera
+from miapp.models import Curso, Carrera, Estudiantes
 from django.db.models import Q
 
 # Create your views here.
@@ -61,3 +61,15 @@ def eliminar_carrera(request, id):
     carrera.delete()
     return redirect('listar_carrera')
     
+def listar_estudiantes(request):
+    
+    estudiantes = Estudiantes.objects.all()    
+    return render(request,'listar_estudiantes.html',{
+        'estudiantes': estudiantes,
+        'titulo': 'Lista de estudiantes'
+    })
+
+def eliminar_estudiantes(request, id):
+    estudiantes = Estudiantes.objects.get(pk=id)
+    estudiantes.delete()
+    return redirect('listar_estudiantes')

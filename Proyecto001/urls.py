@@ -27,5 +27,7 @@ urlpatterns = [
     path('eliminar-curso/<int:id>',views.eliminar_curso, name="eliminar_curso"),
     path('listar-carrera/', views.listar_carrera, name="listar_carrera"),
     path('eliminar-carrera/<int:id>',views.eliminar_carrera, name="eliminar_carrera"),
+    path('listar-estudiantes/', views.listar_estudiantes, name="listar_estudiantes"),
+    path('eliminar-estudiantes/<int:id>',views.eliminar_estudiantes, name="eliminar_estudiantes"),
   
 ]
